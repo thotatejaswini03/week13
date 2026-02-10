@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score, confusion_matrix
 st.title("Campus Placement Prediction System")
 
 # Load dataset
-df = pd.read_csv("placement.csv")
+df = pd.read_csv("week13/placement.csv")
 
 st.subheader("Raw Dataset")
 st.write(df.head())
@@ -119,4 +119,5 @@ if st.button("Predict Placement"):
     result = le_target.inverse_transform([prediction])[0]
 
     st.success(f"Prediction: {result}")
+
     st.write(f"Confidence: {round(prob*100,2)} %")
